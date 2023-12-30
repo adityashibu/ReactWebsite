@@ -106,6 +106,33 @@ function ResponsiveAppBar() {
           </Box>
         </Toolbar>
       </Container>
+    </AppBar>
+
+  );
+}
+
+function AdditionalContent() {
+  return (
+    <div>
+      <Typography
+        variant="h6"
+        noWrap
+        component="a"
+        href="#"
+        sx={{
+          mt: 4,
+          display: { xs: 'none', md: 'flex' },
+          fontFamily: 'monospace',
+          fontWeight: 700,
+          letterSpacing: '.3rem',
+          color: 'inherit',
+          textDecoration: 'none',
+          fontSize: '2rem',
+          pr: 4,
+        }}
+      >
+        TEACHING TIMETABLES
+      </Typography>
 
       <TableContainer component={Paper} sx={{ pt: 4 }}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -136,8 +163,16 @@ function ResponsiveAppBar() {
           </TableBody>
         </Table>
       </TableContainer>
-    </AppBar>
-
+    </div>
   );
 }
-export default ResponsiveAppBar;
+
+function App() {
+  return (
+    <div>
+      <ResponsiveAppBar />
+      <AdditionalContent />
+    </div>
+  );
+}
+export default App;
