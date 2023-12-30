@@ -20,20 +20,17 @@ const pages = ['TimeTables', 'Resources', 'Tests'];
 
 function createData(
   name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
+  time: string,
+  faculty: string,
+  room: number,
 ) {
-  return { name, calories, fat, carbs, protein };
+  return { name, time, faculty, room };
 };
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Introduction to DSA', "09:00", "Salma", 2.14),
+  createData('Database systems', "11:00", "Sheikh. T", 2.15),
+  createData('Hardware software Interface', "12:00", "Kayvan K.", 2.15),
 ];
 
 function ResponsiveAppBar() {
@@ -138,11 +135,10 @@ function AdditionalContent() {
         <Table sx={{ minWidth: 1500 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Dessert (100g serving)</TableCell>
-              <TableCell align="right">Calories</TableCell>
-              <TableCell align="right">Fat&nbsp;(g)</TableCell>
-              <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right">Protein&nbsp;(g)</TableCell>
+              <TableCell sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold' }}>Course Name</TableCell>
+              <TableCell align="right" sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold' }}>Time</TableCell>
+              <TableCell align="right" sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold' }}>Faculty</TableCell>
+              <TableCell align="right" sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold' }}>Room Number</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -154,10 +150,9 @@ function AdditionalContent() {
                 <TableCell component="th" scope="row">
                   {row.name}
                 </TableCell>
-                <TableCell align="right">{row.calories}</TableCell>
-                <TableCell align="right">{row.fat}</TableCell>
-                <TableCell align="right">{row.carbs}</TableCell>
-                <TableCell align="right">{row.protein}</TableCell>
+                <TableCell align="right">{row.time}</TableCell>
+                <TableCell align="right">{row.faculty}</TableCell>
+                <TableCell align="right">{row.room}</TableCell>
               </TableRow>
             ))}
           </TableBody>
