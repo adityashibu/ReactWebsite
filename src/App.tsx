@@ -108,7 +108,7 @@ function ResponsiveAppBar() {
   );
 }
 
-function AdditionalContent() {
+function TimeTables() {
   return (
     <div>
       <Typography
@@ -164,7 +164,7 @@ function App() {
     <div>
       <ResponsiveAppBar />
       <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
-        <AdditionalContent />
+        <TimeTables />
       </div>
     </div>
   );
