@@ -133,7 +133,9 @@ function ResponsiveAppBar() {
           >
             ESSENTIAL LINKS:
           </Typography>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <a href="https://www.google.com" style={{ textDecoration: 'none' }}>
+            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          </a>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
