@@ -115,7 +115,6 @@ function AdditionalContent() {
         variant="h6"
         noWrap
         component="a"
-        href="#"
         sx={{
           mt: 4,
           display: { xs: 'none', md: 'flex' },
@@ -131,33 +130,31 @@ function AdditionalContent() {
         TEACHING TIMETABLES
       </Typography>
 
-      <TableContainer component={Paper} sx={{ pt: 4 }}>
-        <Table sx={{ minWidth: 1500 }} aria-label="simple table">
-          <TableHead>
-            <TableRow sx={{ border: 1 }}>
-              <TableCell sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold', border: 1 }}>Course Name</TableCell>
-              <TableCell align="right" sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold', border: 1 }}>Time</TableCell>
-              <TableCell align="right" sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold', border: 1 }}>Faculty</TableCell>
-              <TableCell align="right" sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold', border: 1 }}>Room Number</TableCell>
+      <Table sx={{ minWidth: 1500, mt: 3 }} aria-label="simple table">
+        <TableHead>
+          <TableRow sx={{ border: 1 }}>
+            <TableCell sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold', border: 1 }}>Course Name</TableCell>
+            <TableCell align="right" sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold', border: 1 }}>Time</TableCell>
+            <TableCell align="right" sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold', border: 1 }}>Faculty</TableCell>
+            <TableCell align="right" sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold', border: 1 }}>Room Number</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow
+              key={row.name}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 }, border: 1 }}
+            >
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="right">{row.time}</TableCell>
+              <TableCell align="right">{row.faculty}</TableCell>
+              <TableCell align="right">{row.room}</TableCell>
             </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.name}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 }, border: 1 }}
-              >
-                <TableCell component="th" scope="row">
-                  {row.name}
-                </TableCell>
-                <TableCell align="right">{row.time}</TableCell>
-                <TableCell align="right">{row.faculty}</TableCell>
-                <TableCell align="right">{row.room}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+          ))}
+        </TableBody>
+      </Table>
     </div>
   );
 }
