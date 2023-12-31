@@ -11,14 +11,12 @@ import AdbIcon from '@mui/icons-material/Adb';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 
 const pages = ['TimeTables', 'Resources', 'Tests'];
 
-function createData(
+function createDataforTT(
   name: string,
   time: string,
   faculty: string,
@@ -28,9 +26,9 @@ function createData(
 };
 
 const rows = [
-  createData('Introduction to DSA', "09:00", "Salma", 2.14),
-  createData('Database systems', "11:00", "Sheikh. T", 2.15),
-  createData('Hardware software Interface', "12:00", "Kayvan K.", 2.15),
+  createDataforTT('Introduction to DSA', "09:00", "Salma", 2.14),
+  createDataforTT('Database systems', "11:00", "Sheikh. T", 2.15),
+  createDataforTT('Hardware software Interface', "12:00", "Kayvan K.", 2.15),
 ];
 
 function ResponsiveAppBar() {
