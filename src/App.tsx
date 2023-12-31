@@ -60,7 +60,7 @@ function ResponsiveAppBar() {
               fontSize: '2rem',
             }}
           >
-            BSC YEAR 2
+            BSC YEAR 2 SEM 2
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
