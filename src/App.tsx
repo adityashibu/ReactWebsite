@@ -230,7 +230,7 @@ function Footer() {
 
 function TimeTables() {
   return (
-    <div>
+    <div style={{ paddingRight: 4 }}>
       <Typography
         variant="h6"
         noWrap
@@ -334,7 +334,7 @@ function App() {
   return (
     <div>
       <ResponsiveAppBar />
-      <div style={{ maxWidth: '1000', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1000', marginLeft: 50 }}>
         <TimeTables />
         <Resources />
       </div>
