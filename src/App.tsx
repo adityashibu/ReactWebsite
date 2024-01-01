@@ -143,6 +143,37 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
     </AppBar>
+  );
+};
+
+function Footer() {
+
+  return (
+    <AppBar position="static" sx={{ mt: 5 }}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters sx={{ justifyContent: 'center' }}>
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            sx={{
+              pt: 3,
+              pb: 3,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+              fontSize: '1rem',
+            }}
+          >
+            Designed by Aditya S. and David F.
+          </Typography>
+
+        </Toolbar>
+      </Container>
+    </AppBar>
 
   );
 }
@@ -253,10 +284,13 @@ function App() {
   return (
     <div>
       <ResponsiveAppBar />
-      <div style={{ maxWidth: '1500px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1000', margin: '0 auto' }}>
         <TimeTables />
         <Resources />
       </div>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
