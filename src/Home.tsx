@@ -7,12 +7,6 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
-const buttons = [
-    <Button key="one">TIMETABLES</Button>,
-    <Button key="two">RESOURCES</Button>,
-    <Button key="three">TESTS</Button>,
-];
-
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : 'lightgray',
     ...theme.typography.body2,
@@ -41,7 +35,15 @@ function Home() {
                             </Typography>
                             <Typography variant="body1" align="center" sx={{ fontFamily: 'monospace' }}>
                                 <ButtonGroup size="large" aria-label="large button group">
-                                    {buttons}
+                                    <Link to="/timetables" style={{ textDecoration: 'none' }}>
+                                        <Button key="one">TIMETABLES</Button>
+                                    </Link>
+                                    <Link to="/resources" style={{ textDecoration: 'none' }}>
+                                        <Button key="two">RESOURCES</Button>
+                                    </Link>
+                                    <Link to="/tests" style={{ textDecoration: 'none' }}>
+                                        <Button key="three">TESTS</Button>
+                                    </Link>
                                 </ButtonGroup>
                             </Typography>
                         </Container>
