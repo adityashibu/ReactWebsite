@@ -56,17 +56,35 @@ function Home() {
                             <Typography
                                 variant="h4"
                                 align="center"
-                                sx={{ fontFamily: 'monospace', fontWeight: 700, mb: 4, color: 'black' }}
+                                sx={{ fontFamily: 'monospace', fontWeight: 700, mb: 4, color: 'black', fontSize: '3rem' }}
                             >
-                                Timeline of the Website Development
+                                Essential Links
                             </Typography>
-                            <Typography variant="body1" align="center" sx={{ mb: 4, fontFamily: 'monospace' }}>
-                                Explore teaching timetables, resources, and more!
-                            </Typography>
+
                             <Typography variant="body1" align="center" sx={{ fontFamily: 'monospace' }}>
-                                <Link to="/timetables" style={{ textDecoration: 'none' }}>
-                                    View Teaching Timetables
-                                </Link>
+                                <ButtonGroup size="large" aria-label="large button group" sx={{ mt: 2 }}>
+                                    <Link to="https://portal.hw.ac.uk/" style={{ textDecoration: 'none' }}>
+                                        <Button key="one">MYHWU</Button>
+                                    </Link>
+                                    <Link to="https://canvas.hw.ac.uk" style={{ textDecoration: 'none' }}>
+                                        <Button key="two">CANVAS</Button>
+                                    </Link>
+                                    <Link to="https://gitlab-student.macs.hw.ac.uk/" style={{ textDecoration: 'none' }}>
+                                        <Button key="three">GITLAB</Button>
+                                    </Link>
+                                </ButtonGroup>
+
+                                <ButtonGroup size="large" aria-label="large button group" sx={{ mt: 3 }}>
+                                    <Link to="https://github.com/" style={{ textDecoration: 'none' }}>
+                                        <Button key="one">GITHUB</Button>
+                                    </Link>
+                                    <Link to="https://b.socrative.com/login/student/" style={{ textDecoration: 'none' }}>
+                                        <Button key="two">SOCRATIVE</Button>
+                                    </Link>
+                                    <Link to="https://outlook.com" style={{ textDecoration: 'none' }}>
+                                        <Button key="three">OUTLOOK</Button>
+                                    </Link>
+                                </ButtonGroup>
                             </Typography>
                         </Container>
                     </Item>
