@@ -341,7 +341,7 @@ function App() {
   return (
     <div>
       <ResponsiveAppBar />
-      <div style={{ maxWidth: '1000', marginLeft: 50 }}>
+      <div style={{ maxWidth: '500', marginLeft: 50 }}>
         <TimeTables />
         <Resources />
       </div>
