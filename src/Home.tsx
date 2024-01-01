@@ -2,9 +2,16 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import { experimentalStyled as styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+
+const buttons = [
+    <Button key="one">TIMETABLES</Button>,
+    <Button key="two">RESOURCES</Button>,
+    <Button key="three">TESTS</Button>,
+];
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : 'lightgray',
@@ -33,9 +40,9 @@ function Home() {
                                 Explore teaching timetables, resources, and more!
                             </Typography>
                             <Typography variant="body1" align="center" sx={{ fontFamily: 'monospace' }}>
-                                <Link to="/timetables" style={{ textDecoration: 'none' }}>
-                                    View Teaching Timetables
-                                </Link>
+                                <ButtonGroup size="large" aria-label="large button group">
+                                    {buttons}
+                                </ButtonGroup>
                             </Typography>
                         </Container>
                     </Item>
