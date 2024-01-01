@@ -250,7 +250,7 @@ function TimeTables() {
         TEACHING TIMETABLES
       </Typography>
 
-      <Table sx={{ maxWidth: 1000, mt: 3 }} aria-label="simple table">
+      <Table sx={{ maxWidth: 1000, mt: 3, mr: 7 }} aria-label="simple table">
         <TableHead>
           <TableRow sx={{ border: 1 }}>
             <TableCell sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold', border: 1 }}>Course Name</TableCell>
