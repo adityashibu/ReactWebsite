@@ -218,7 +218,7 @@ function Footer() {
               fontSize: '1rem',
             }}
           >
-            Designed by Aditya S. and David F.
+            Designed by Aditya S. & David F.
           </Typography>
 
         </Toolbar>
