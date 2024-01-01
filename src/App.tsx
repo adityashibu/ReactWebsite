@@ -133,12 +133,62 @@ function ResponsiveAppBar() {
           >
             ESSENTIAL LINKS:
           </Typography>
-          <a href="https://www.google.com" style={{ textDecoration: 'none' }}>
+          <a
+            href="https://www.google.com"
+            style={{
+              textDecoration: 'none',
+              color: 'white',
+              transition: 'color 0.3s',
+            }}
+            target="_blank"
+            rel="noreferrer"
+            onMouseEnter={(e) => (e.currentTarget.style.color = 'lightgray')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'white')}
+          >
             <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           </a>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <a
+            href="https://www.google.com"
+            style={{
+              textDecoration: 'none',
+              color: 'white',
+              transition: 'color 0.3s',
+            }}
+            target="_blank"
+            rel="noreferrer"
+            onMouseEnter={(e) => (e.currentTarget.style.color = 'lightgray')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'white')}
+          >
+            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          </a>
+          <a
+            href="https://www.google.com"
+            style={{
+              textDecoration: 'none',
+              color: 'white',
+              transition: 'color 0.3s',
+            }}
+            target="_blank"
+            rel="noreferrer"
+            onMouseEnter={(e) => (e.currentTarget.style.color = 'lightgray')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'white')}
+          >
+            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          </a>
+          <a
+            href="https://www.google.com"
+            style={{
+              textDecoration: 'none',
+              color: 'white',
+              transition: 'color 0.3s',
+            }}
+            target="_blank"
+            rel="noreferrer"
+            onMouseEnter={(e) => (e.currentTarget.style.color = 'lightgray')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'white')}
+          >
+            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          </a>
 
         </Toolbar>
       </Container>
