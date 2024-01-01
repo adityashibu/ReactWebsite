@@ -1,6 +1,5 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
-import TimeTables from './Timetables';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -16,6 +15,9 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Link } from 'react-router-dom';
+
+import Home from './Home';
+import TimeTables from './Timetables';
 
 const pages = ['TimeTables', 'Resources', 'Tests'];
 
@@ -49,7 +51,7 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="#"
+            href="/"
             sx={{
               mr: 4,
               display: { xs: 'none', md: 'flex' },
@@ -195,7 +197,7 @@ function ResponsiveAppBar() {
 
 function Footer() {
   return (
-    <AppBar position="static" sx={{ mt: 5 }}>
+    <AppBar position="static" sx={{ mt: 5, top: 'auto', bottom: 0 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: 'center' }}>
           <Typography
@@ -278,11 +280,16 @@ function App() {
     <Router>
       <div>
         <ResponsiveAppBar />
-        <Routes>
-          <Route path="/timetables" element={<TimeTables />} />
-          <Route path="/resources" element={<Resources />} />
-        </Routes>
-        <Footer />
+        <div style={{ marginLeft: 50 }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/timetables" element={<TimeTables />} />
+            <Route path="/resources" element={<Resources />} />
+          </Routes>
+        </div>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </Router>
   );
