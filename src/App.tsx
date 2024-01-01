@@ -1,5 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
+import TimeTables from './Timetables';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -13,23 +15,9 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { Link } from 'react-router-dom';
 
 const pages = ['TimeTables', 'Resources', 'Tests'];
-
-function createDataforTT(
-  name: string,
-  time: string,
-  faculty: string,
-  room: number,
-) {
-  return { name, time, faculty, room };
-};
-
-const rowsTT = [
-  createDataforTT('Introduction to DSA', "09:00", "Salma", 2.14),
-  createDataforTT('Database systems', "11:00", "Sheikh. T", 2.15),
-  createDataforTT('Hardware software Interface', "12:00", "Kayvan K.", 2.15),
-];
 
 function createDataforResources(
   name: string,
@@ -38,12 +26,12 @@ function createDataforResources(
   room: number,
 ) {
   return { name, time, faculty, room };
-};
+}
 
 const rowsResources = [
-  createDataforResources('Introduction to DSA', "09:00", "Salma", 2.14),
-  createDataforResources('Database systems', "11:00", "Sheikh. T", 2.15),
-  createDataforResources('Hardware software Interface', "12:00", "Kayvan K.", 2.15),
+  createDataforResources('Introduction to DSA', '09:00', 'Salma', 2.14),
+  createDataforResources('Database systems', '11:00', 'Sheikh. T', 2.15),
+  createDataforResources('Hardware software Interface', '12:00', 'Kayvan K.', 2.15),
 ];
 
 function ResponsiveAppBar() {
@@ -107,6 +95,8 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
+                component={Link}
+                to={`/${page.toLowerCase()}`}
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 3,
@@ -201,10 +191,9 @@ function ResponsiveAppBar() {
       </Container>
     </AppBar>
   );
-};
+}
 
 function Footer() {
-
   return (
     <AppBar position="static" sx={{ mt: 5 }}>
       <Container maxWidth="xl">
@@ -227,62 +216,9 @@ function Footer() {
           >
             Designed by Aditya S. & David F.
           </Typography>
-
         </Toolbar>
       </Container>
     </AppBar>
-
-  );
-}
-
-function TimeTables() {
-  return (
-    <div style={{ paddingRight: 4 }}>
-      <Typography
-        variant="h6"
-        noWrap
-        component="a"
-        sx={{
-          mt: 4,
-          display: { xs: 'none', md: 'flex' },
-          fontFamily: 'monospace',
-          fontWeight: 700,
-          letterSpacing: '.3rem',
-          color: 'inherit',
-          textDecoration: 'none',
-          fontSize: '2rem',
-          pr: 4,
-        }}
-      >
-        TEACHING TIMETABLES
-      </Typography>
-
-      <Table sx={{ maxWidth: 1000, mt: 3, mr: 7 }} aria-label="simple table">
-        <TableHead>
-          <TableRow sx={{ border: 1 }}>
-            <TableCell sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold', border: 1 }}>Course Name</TableCell>
-            <TableCell align="right" sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold', border: 1 }}>Time</TableCell>
-            <TableCell align="right" sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold', border: 1 }}>Faculty</TableCell>
-            <TableCell align="right" sx={{ letterSpacing: '.3rem', fontSize: '1.5rem', fontWeight: 'bold', border: 1 }}>Room Number</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rowsTT.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 }, border: 1 }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.time}</TableCell>
-              <TableCell align="right">{row.faculty}</TableCell>
-              <TableCell align="right">{row.room}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
   );
 }
 
@@ -339,16 +275,17 @@ function Resources() {
 
 function App() {
   return (
-    <div>
-      <ResponsiveAppBar />
-      <div style={{ maxWidth: '500', marginLeft: 50 }}>
-        <TimeTables />
-        <Resources />
-      </div>
-      <footer>
+    <Router>
+      <div>
+        <ResponsiveAppBar />
+        <Routes>
+          <Route path="/timetables" element={<TimeTables />} />
+          <Route path="/resources" element={<Resources />} />
+        </Routes>
         <Footer />
-      </footer>
-    </div>
+      </div>
+    </Router>
   );
 }
+
 export default App;
