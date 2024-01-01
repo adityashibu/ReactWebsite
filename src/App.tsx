@@ -51,7 +51,7 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/home"
             sx={{
               mr: 4,
               display: { xs: 'none', md: 'flex' },
@@ -282,7 +282,7 @@ function App() {
         <ResponsiveAppBar />
         <div style={{ marginLeft: 50 }}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/timetables" element={<TimeTables />} />
             <Route path="/resources" element={<Resources />} />
           </Routes>
